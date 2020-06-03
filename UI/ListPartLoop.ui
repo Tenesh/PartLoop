@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogListPart</class>
+ <widget class="QDialog" name="DialogListPart">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1900</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1900</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1900</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Poppins</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Part Directory</string>
+  </property>
+  <widget class="QComboBox" name="comboBoxListPartDepartment">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>60</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <property name="currentText">
+    <string>Facility Operation</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Facility Operation</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Building Maintenance</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="labelListPartName">
+   <property name="geometry">
+    <rect>
+     <x>625</x>
+     <y>10</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="toolTipDuration">
+    <number>-3</number>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelListPartDepartment">
+   <property name="geometry">
+    <rect>
+     <x>625</x>
+     <y>60</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="toolTipDuration">
+    <number>-3</number>
+   </property>
+   <property name="text">
+    <string>Department</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineListPartName">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>10</y>
+     <width>576</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="placeholderText">
+    <string>Name of part</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelListPartStorage">
+   <property name="geometry">
+    <rect>
+     <x>1000</x>
+     <y>60</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="toolTipDuration">
+    <number>-3</number>
+   </property>
+   <property name="text">
+    <string>Storage</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxListPartStorage">
+   <property name="geometry">
+    <rect>
+     <x>1125</x>
+     <y>60</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>Store Rack A.1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Store Rack A.2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Store Rack B.1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Store Rack B.2</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="labelListPartCategory">
+   <property name="geometry">
+    <rect>
+     <x>625</x>
+     <y>110</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="toolTipDuration">
+    <number>-3</number>
+   </property>
+   <property name="text">
+    <string>Category</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxListPartCategory">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>110</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>Paint</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Cable</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Valve</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pushButtonListPartSearch">
+   <property name="geometry">
+    <rect>
+     <x>1375</x>
+     <y>60</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelListPartStockLevel">
+   <property name="geometry">
+    <rect>
+     <x>1000</x>
+     <y>110</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="toolTipDuration">
+    <number>-3</number>
+   </property>
+   <property name="text">
+    <string>Stock Level</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxListPartStockLevel">
+   <property name="geometry">
+    <rect>
+     <x>1125</x>
+     <y>110</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>Normal</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Low</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>High</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pushButtonListPartReset">
+   <property name="geometry">
+    <rect>
+     <x>1375</x>
+     <y>110</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Poppins</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Reset</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidgetListPart">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>160</y>
+     <width>1880</width>
+     <height>830</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1880</width>
+     <height>830</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1880</width>
+     <height>830</height>
+    </size>
+   </property>
+   <column>
+    <property name="text">
+     <string>Part ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Department</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>New Column</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Manufacturer</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Model</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Category</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Storage</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Stock Quantity</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

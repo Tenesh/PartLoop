@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1900</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1900</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1900</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>MS Shell Dlg 2</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>PartLoop</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>30</width>
+    <height>30</height>
+   </size>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowNestedDocks|QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="labelMainTitle">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>50</y>
+      <width>700</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Phenomena</family>
+      <pointsize>120</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(17, 99, 132);</string>
+    </property>
+    <property name="text">
+     <string>PARTLOOP</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowserMainInfo">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>300</y>
+      <width>1500</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(240, 240, 240);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9.75pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:24pt; color:#181818;&quot;&gt;Welcome to PartLoop!&lt;/span&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt;&quot;&gt;PartLoop is an open-source inventory application primarily designed for general spare part or component management . PartLoop is entirely written in Python with several frameworks namely PyQt5 and PostgreSQL for relational database. With PartLoop, you can manage your inventory with precision and accuracy!  &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt;&quot;&gt;The core functionality of the system are managing parts and usage entries. It has never been this easy to store your part details! You can add or edit parts with various details such as manufacturer, brand, model, minimum stock and etc. You can easily track the actual quantity of parts in the system which will alert if lower limit reached! You can record the usage of each stock using entry function providing you the overall information of your inventory activities with very minute details. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt;&quot;&gt;With various filtering keys,  PartLoop allows you to search for many fields in seconds - no matter how many parts you've got. You can also search for stock levels, order numbers, manufacturers, location and more. How often have you ordered parts you already had in stock, but couldn't find them? How often did you forget to re-order parts because your stock went low and you didn't notice?  &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Poppins'; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt; font-weight:600;&quot;&gt;With PartLoop, you are covered!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1900</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionConnect"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionListPart"/>
+    <addaction name="actionListEntry"/>
+    <addaction name="actionStatistics"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelpAbout"/>
+    <addaction name="actionHelpDocumentation"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionEditPart_2"/>
+    <addaction name="actionEditEntry_2"/>
+   </widget>
+   <widget class="QMenu" name="menuSetting_2">
+    <property name="title">
+     <string>New</string>
+    </property>
+    <addaction name="actionNewPart_3"/>
+    <addaction name="actionNewEntry_3"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionCustom"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSetting_2"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSave">
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="statusTip">
+    <string>Save a file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Quit </string>
+   </property>
+  </action>
+  <action name="actionNew_Equipment">
+   <property name="text">
+    <string>New Part</string>
+   </property>
+  </action>
+  <action name="actionNew_Entry">
+   <property name="text">
+    <string>New Entry</string>
+   </property>
+  </action>
+  <action name="actionNew_Entry_2">
+   <property name="text">
+    <string>New Entry</string>
+   </property>
+  </action>
+  <action name="actionNewPart">
+   <property name="text">
+    <string>New Part</string>
+   </property>
+  </action>
+  <action name="actionNewEntry">
+   <property name="text">
+    <string>New Entry</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/quit.png</normaloff>:/Images/quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionEditPart">
+   <property name="text">
+    <string>Edit Part</string>
+   </property>
+  </action>
+  <action name="actionEditEntry">
+   <property name="text">
+    <string>Edit Entry</string>
+   </property>
+  </action>
+  <action name="actionAccounts">
+   <property name="text">
+    <string>Accounts</string>
+   </property>
+  </action>
+  <action name="actionNew_User">
+   <property name="text">
+    <string>New User</string>
+   </property>
+  </action>
+  <action name="actionNew_User_2">
+   <property name="text">
+    <string>New User</string>
+   </property>
+  </action>
+  <action name="actionAdminNewUser">
+   <property name="text">
+    <string>Add User</string>
+   </property>
+  </action>
+  <action name="actionAdminEditUser">
+   <property name="text">
+    <string>Edit User</string>
+   </property>
+  </action>
+  <action name="actionUserUpdateAccount">
+   <property name="text">
+    <string>Update Account</string>
+   </property>
+  </action>
+  <action name="actionParts">
+   <property name="text">
+    <string>Parts</string>
+   </property>
+  </action>
+  <action name="actionListPart">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/list.png</normaloff>:/Images/list.png</iconset>
+   </property>
+   <property name="text">
+    <string>Part List</string>
+   </property>
+  </action>
+  <action name="actionListEntry">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/list.png</normaloff>:/Images/list.png</iconset>
+   </property>
+   <property name="text">
+    <string>Entry List</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </action>
+  <action name="actionExportExcel">
+   <property name="text">
+    <string>Csv</string>
+   </property>
+  </action>
+  <action name="actionExportJson">
+   <property name="text">
+    <string>Json</string>
+   </property>
+  </action>
+  <action name="actionExportPDF">
+   <property name="text">
+    <string>Pdf</string>
+   </property>
+  </action>
+  <action name="actionStatistics">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/statistics.png</normaloff>:/Images/statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>Statistics</string>
+   </property>
+  </action>
+  <action name="actionHelpAbout">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/started.png</normaloff>:/Images/started.png</iconset>
+   </property>
+   <property name="text">
+    <string>Getting Started</string>
+   </property>
+  </action>
+  <action name="actionHelpDocumentation">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/documentation.png</normaloff>:/Images/documentation.png</iconset>
+   </property>
+   <property name="text">
+    <string>Documentation</string>
+   </property>
+  </action>
+  <action name="actionHelpContact">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/about.png</normaloff>:/Images/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionConnect">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/connect.png</normaloff>:/Images/connect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Connect</string>
+   </property>
+  </action>
+  <action name="actionNewPart_2">
+   <property name="text">
+    <string>New Part</string>
+   </property>
+  </action>
+  <action name="actionNewEntry_2">
+   <property name="text">
+    <string>New Entry</string>
+   </property>
+  </action>
+  <action name="actionEditPart_2">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/edit.png</normaloff>:/Images/edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Part</string>
+   </property>
+  </action>
+  <action name="actionEditEntry_2">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/edit.png</normaloff>:/Images/edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Entry</string>
+   </property>
+  </action>
+  <action name="actionNewPart_3">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/new.png</normaloff>:/Images/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Part</string>
+   </property>
+  </action>
+  <action name="actionNewEntry_3">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/new.png</normaloff>:/Images/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Entry</string>
+   </property>
+  </action>
+  <action name="actionCustom">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/Images/custom.png</normaloff>:/Images/custom.png</iconset>
+   </property>
+   <property name="text">
+    <string>Custom</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
