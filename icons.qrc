@@ -1,0 +1,20 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>Images/connect.png</file>
+        <file>Images/about.png</file>
+        <file>Images/delete.png</file>
+        <file>Images/documentation.png</file>
+        <file>Images/edit.png</file>
+        <file>Images/list.png</file>
+        <file>Images/new.png</file>
+        <file>Images/quit.png</file>
+        <file>Images/save.png</file>
+        <file>Images/search.png</file>
+        <file>Images/settings.png</file>
+        <file>Images/started.png</file>
+        <file>Images/statistics.png</file>
+        <file>Images/undo.png</file>
+        <file>Images/custom.png</file>
+    </qresource>
+</RCC>
