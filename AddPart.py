@@ -3,6 +3,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import sys
 import psycopg2
+from psycopg2 import IntegrityError
 from Connect import ConnectDatabase
 from PyQt5.uic import loadUiType
 
@@ -97,17 +98,22 @@ class AddPartApp(QDialog, addpart_ui):
         try:
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
-            self.cur.execute('''INSERT INTO part (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_stocklimit) 
-                                                VALUES (%s , %s , %s , %s , %s , %s , %s , %s)''', (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_limit))
+            try:
+                self.cur.execute('''INSERT INTO part (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_stocklimit) 
+                                                    VALUES (%s , %s , %s , %s , %s , %s , %s , %s)''', (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_limit))
+            except IntegrityError as error:
+                self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
+                self.AddPart_reset()
+                self.error_popup("Duplicate Error", "Name of part already exists! Please use different name")
+            else:
+                self.cur.execute('RELEASE SAVEPOINT SP1')
+                self.db.commit()
+                self.AddPart_reset()
+                self.success_popup("Part", "New Part Added.")
         except Exception as error:
             self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
             self.AddPart_reset()
             self.error_popup("Input Error", error)
-        else:
-            self.cur.execute('RELEASE SAVEPOINT SP1')
-            self.db.commit()
-            self.AddPart_reset()
-            self.success_popup("Part", "New Part Added.")
         self.db.close()
 
     # Method to show success popup window
