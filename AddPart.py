@@ -17,6 +17,12 @@ class AddPartApp(QDialog, addpart_ui):
         self.ShowDepartment_custom()
         self.ShowStorage_custom()
         self.ShowCategory_custom()
+        self.HandleButtonAction()
+
+    # Method for Button action
+    def HandleButtonAction(self):
+        self.pushButtonNewPartAdd.clicked.connect(self.AddPart_validate)
+        self.pushButtonNewPartReset.clicked.connect(self.AddPart_reset)
 
     # Method to show drop-down data
     def ShowDepartment_custom(self):
@@ -45,3 +51,80 @@ class AddPartApp(QDialog, addpart_ui):
         for storage in storage_list:
             self.comboBoxNewPartStorage.addItem(storage[0])
         self.db.close()
+
+    # Method to validate empty field data entry
+    def AddPart_validate(self):
+        if not self.lineNewPartName.text() == '':
+            if not self.lineNewPartManufacturer.text() == '':
+                if not self.lineNewPartModel.text() == '':
+                    if not self.lineNewPartDescription.toPlainText() == '':
+                        self.AddPart_Data()
+                    else:
+                        self.error_popup("Input Error", "Invalid input or empty Description field")
+                else:
+                    self.error_popup("Input Error", "Invalid input or empty Model field")
+            else:
+                self.error_popup("Input Error", "Invalid input or empty Manufacturer field")
+        else:
+            self.error_popup("Input Error", "Invalid input or empty Name field")
+
+    # Method to reset all add part fields
+    def AddPart_reset(self):
+        self.lineNewPartName.clear()
+        self.comboBoxNewPartDepartment.clear()
+        self.lineNewPartManufacturer.clear()
+        self.lineNewPartModel.clear()
+        self.comboBoxNewPartCategory.clear()
+        self.comboBoxNewPartStorage.clear()
+        self.spinBoxNewPartLimit.clear()
+        self.lineNewPartDescription.clear()
+        self.spinBoxNewPartLimit.setValue(1)
+        self.ShowDepartment_custom()
+        self.ShowStorage_custom()
+        self.ShowCategory_custom()
+
+    # Method to add part data
+    def AddPart_Data(self):
+        self.db = ConnectDatabase()
+        part_name = self.lineNewPartName.text()
+        part_department = self.comboBoxNewPartDepartment.currentText()
+        part_manufacturer = self.lineNewPartManufacturer.text()
+        part_model = self.lineNewPartModel.text()
+        part_category = self.comboBoxNewPartCategory.currentText()
+        part_storage = self.comboBoxNewPartStorage.currentText()
+        part_limit = self.spinBoxNewPartLimit.value()
+        part_description = self.lineNewPartDescription.toPlainText()
+        try:
+            self.cur = self.db.cursor()
+            self.cur.execute('SAVEPOINT SP1')
+            self.cur.execute('''INSERT INTO part (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_stocklimit) 
+                                                VALUES (%s , %s , %s , %s , %s , %s , %s , %s)''', (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_limit))
+        except Exception as error:
+            self.AddPart_reset()
+            self.error_popup("Input Error", error)
+        else:
+            self.cur.execute('RELEASE SAVEPOINT SP1')
+            self.db.commit()
+            self.AddPart_reset()
+            self.success_popup("Part", "New Part Added.")
+        self.db.close()
+
+    # Method to show success popup window
+    def success_popup(self, title_popup, msg_popup):
+        popup = QMessageBox()
+        popup.setFixedSize(500, 500)
+        popup.setWindowTitle(title_popup)
+        popup.setIcon(QMessageBox.Information)
+        popup.setStyleSheet("font:9pt Poppins;")
+        popup.setText(msg_popup)
+        popup.exec_()
+
+    # Method to show error popup window
+    def error_popup(self, title_popup, msg_popup):
+        popup = QMessageBox()
+        popup.setFixedSize(500, 500)
+        popup.setWindowTitle(title_popup)
+        popup.setIcon(QMessageBox.Warning)
+        popup.setStyleSheet("font:9pt Poppins;")
+        popup.setText(msg_popup)
+        popup.exec_()
