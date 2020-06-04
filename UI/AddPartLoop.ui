@@ -368,7 +368,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButtonNewPartUndo">
+  <widget class="QPushButton" name="pushButtonNewPartReset">
    <property name="geometry">
     <rect>
      <x>700</x>
@@ -384,7 +384,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Undo</string>
+    <string>Reset</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
