@@ -100,6 +100,7 @@ class AddPartApp(QDialog, addpart_ui):
             self.cur.execute('''INSERT INTO part (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_stocklimit) 
                                                 VALUES (%s , %s , %s , %s , %s , %s , %s , %s)''', (part_name, part_department, part_manufacturer, part_model, part_category, part_storage, part_description, part_limit))
         except Exception as error:
+            self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
             self.AddPart_reset()
             self.error_popup("Input Error", error)
         else:
