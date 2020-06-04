@@ -57,6 +57,7 @@ class AddEntryApp(QDialog, addentry_ui):
         self.lineNewEntryDescription.clear()
         self.comboBoxNewEntryEmployee.clear()
         self.spinBoxNewEntryQuantity.setValue(1)
+        self.comboBoxNewEntryStatus.setCurrentIndex(0)
         self.ShowName_part()
         self.ShowEmployee_custom()
 
