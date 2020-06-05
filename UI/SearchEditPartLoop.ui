@@ -62,6 +62,9 @@
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
    <property name="placeholderText">
     <string>Part ID</string>
    </property>
