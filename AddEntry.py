@@ -16,6 +16,7 @@ class AddEntryApp(QDialog, addentry_ui):
         self.setupUi(self)
         self.ShowEmployee_custom()
         self.ShowName_part()
+        self.ShowStatus_entry()
         self.HandleButtonAction()
 
     # Method for Button action
@@ -42,6 +43,15 @@ class AddEntryApp(QDialog, addentry_ui):
             self.comboBoxNewEntryPart.addItem(part[0])
         self.db.close()
 
+    def ShowStatus_entry(self):
+        self.db = ConnectDatabase()
+        self.cur = self.db.cursor()
+        self.cur.execute('SELECT status_name FROM status')
+        status_list = self.cur.fetchall()
+        for status in status_list:
+            self.comboBoxNewEntryStatus.addItem(status[0])
+        self.db.close()
+
     # Method to validate empty field data entry
     def AddEntry_validate(self):
         if not self.lineNewEntryDescription.toPlainText() == '':
@@ -53,13 +63,14 @@ class AddEntryApp(QDialog, addentry_ui):
     def AddEntry_reset(self):
         self.comboBoxNewEntryPart.clear()
         self.comboBoxNewEntryEmployee.clear()
+        self.comboBoxNewEntryStatus.clear()
         self.spinBoxNewEntryQuantity.clear()
         self.lineNewEntryDescription.clear()
         self.comboBoxNewEntryEmployee.clear()
         self.spinBoxNewEntryQuantity.setValue(1)
-        self.comboBoxNewEntryStatus.setCurrentIndex(0)
         self.ShowName_part()
         self.ShowEmployee_custom()
+        self.ShowStatus_entry()
 
     # Method to add entry data
     def AddEntry_Data(self):
