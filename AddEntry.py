@@ -74,25 +74,17 @@ class AddEntryApp(QDialog, addentry_ui):
         try:
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
-            self.cur.execute('''SELECT id FROM part WHERE part_name = %s ''', [(part_id,)])
+            self.cur.execute('''INSERT INTO entry (part_id, entry_status, entry_qty, entry_desc, entry_date, entry_employee)
+                                                    VALUES ((SELECT id FROM part WHERE part_name = %s) , %s , %s , %s , %s , %s)''', (part_id, entry_status, entry_quantity, entry_description, entry_date, entry_employee))
         except Exception as error:
             self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
             self.AddEntry_reset()
             self.error_popup("Input Error", error)
         else:
-            fetch_id = self.cur.fetchone()
-            try:
-                self.cur.execute('''INSERT INTO entry (part_id, entry_status, entry_qty, entry_desc, entry_date, entry_employee)
-                                                    VALUES (%s , %s , %s , %s , %s , %s)''', (fetch_id, entry_status, entry_quantity, entry_description, entry_date, entry_employee))
-            except Exception as error:
-                self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
-                self.AddEntry_reset()
-                self.error_popup("Input Error", error)
-            else:
-                self.cur.execute('RELEASE SAVEPOINT SP1')
-                self.db.commit()
-                self.AddEntry_reset()
-                self.success_popup("Entry", "New Entry Added.")
+            self.cur.execute('RELEASE SAVEPOINT SP1')
+            self.db.commit()
+            self.AddEntry_reset()
+            self.success_popup("Entry", "New Entry Added.")
         self.db.close()
 
     # Method to show success popup window
