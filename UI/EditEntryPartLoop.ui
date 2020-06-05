@@ -367,28 +367,6 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="labelEditEntryId">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>20</y>
-     <width>70</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Poppins</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="toolTipDuration">
-    <number>-3</number>
-   </property>
-   <property name="text">
-    <string>ID</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="lineEditEntry">
    <property name="geometry">
     <rect>
@@ -397,56 +375,6 @@
      <width>500</width>
      <height>40</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditEntryId">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>20</y>
-     <width>300</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Poppins</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="placeholderText">
-    <string>Entry ID</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonEditEntrySearch">
-   <property name="geometry">
-    <rect>
-     <x>650</x>
-     <y>20</y>
-     <width>100</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Poppins</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="text">
-    <string>Search</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
    </property>
   </widget>
  </widget>
