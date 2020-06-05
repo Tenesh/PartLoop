@@ -50,8 +50,8 @@ class CustomApp(QDialog, custom_ui):
 
     # Method to add drop-down data
     def AddDepartment_custom(self):
-        self.db = ConnectDatabase()
         department_name = self.lineCustomDepartment.text()
+        self.db = ConnectDatabase()
         try:
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
@@ -72,8 +72,8 @@ class CustomApp(QDialog, custom_ui):
             self.error_popup("Input Error", error)
 
     def AddStorage_custom(self):
-        self.db = ConnectDatabase()
         storage_name = self.lineCustomStorage.text()
+        self.db = ConnectDatabase()
         try:
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
@@ -94,8 +94,8 @@ class CustomApp(QDialog, custom_ui):
             self.error_popup("Input Error", error)
 
     def AddCategory_custom(self):
-        self.db = ConnectDatabase()
         category_name = self.lineCustomCategory.text()
+        self.db = ConnectDatabase()
         try:
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
@@ -116,8 +116,8 @@ class CustomApp(QDialog, custom_ui):
             self.error_popup("Input Error", error)
 
     def AddEmployee_custom(self):
-        self.db = ConnectDatabase()
         employee_name = self.lineCustomEmployee.text()
+        self.db = ConnectDatabase()
         try:
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
