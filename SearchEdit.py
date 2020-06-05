@@ -42,7 +42,7 @@ class SearchEditPartApp(QDialog, searcheditpart_ui):
                 self.error_popup("Invalid Input", "Part not registered.")
             else:
                 self.EditPart_window(part_id)
-        self.db.close
+        self.db.close()
 
     # Method to open Edit Part window
     def EditPart_window(self, part_id):
@@ -81,16 +81,14 @@ class SearchEditEntryApp(QDialog, searcheditentry_ui):
             self.db = ConnectDatabase()
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
-            self.cur.execute('''SELECT * FROM entry where id = %s''', [(entry_id,)])  # Check if part id available in db
+            self.cur.execute('''SELECT * FROM entry where id = %s''', [(entry_id,)])  # Check if entry id available in db
             fetch_data = self.cur.fetchone()
             if fetch_data is None:  # If returns None or Id not in database
                 self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
                 self.error_popup("Invalid Input", "Entry not registered.")
             else:
-                print(fetch_data[2])
-                print(len(fetch_data[2]))
-                # self.EditEntry_window(entry_id)
-        self.db.close
+                self.EditEntry_window(entry_id)
+        self.db.close()
 
     # Method to open Edit Entry window
     def EditEntry_window(self, entry_id):
