@@ -197,16 +197,6 @@
      <pointsize>14</pointsize>
     </font>
    </property>
-   <item>
-    <property name="text">
-     <string>In</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Out</string>
-    </property>
-   </item>
   </widget>
   <widget class="QComboBox" name="comboBoxNewEntryEmployee">
    <property name="geometry">
