@@ -86,7 +86,6 @@ class AddPartApp(QDialog, addpart_ui):
 
     # Method to add part data
     def AddPart_Data(self):
-        self.db = ConnectDatabase()
         part_name = self.lineNewPartName.text()
         part_department = self.comboBoxNewPartDepartment.currentText()
         part_manufacturer = self.lineNewPartManufacturer.text()
@@ -95,6 +94,7 @@ class AddPartApp(QDialog, addpart_ui):
         part_storage = self.comboBoxNewPartStorage.currentText()
         part_limit = self.spinBoxNewPartLimit.value()
         part_description = self.lineNewPartDescription.toPlainText()
+        self.db = ConnectDatabase()
         try:
             self.cur = self.db.cursor()
             self.cur.execute('SAVEPOINT SP1')
