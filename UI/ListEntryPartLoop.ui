@@ -116,93 +116,11 @@
     <string>Name of part</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelListEntryStorage">
-   <property name="geometry">
-    <rect>
-     <x>1020</x>
-     <y>60</y>
-     <width>100</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Poppins</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="toolTipDuration">
-    <number>-3</number>
-   </property>
-   <property name="text">
-    <string>Storage</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxListEntryStorage">
-   <property name="geometry">
-    <rect>
-     <x>1125</x>
-     <y>60</y>
-     <width>200</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Poppins</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="editable">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelListEntryCategory">
-   <property name="geometry">
-    <rect>
-     <x>625</x>
-     <y>110</y>
-     <width>120</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Poppins</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="toolTipDuration">
-    <number>-3</number>
-   </property>
-   <property name="text">
-    <string>Category</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxListEntryCategory">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>110</y>
-     <width>200</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Poppins</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="editable">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButtonListEntrySearch">
    <property name="geometry">
     <rect>
      <x>1375</x>
-     <y>60</y>
+     <y>10</y>
      <width>100</width>
      <height>30</height>
     </rect>
@@ -233,7 +151,7 @@
    <property name="geometry">
     <rect>
      <x>1020</x>
-     <y>110</y>
+     <y>60</y>
      <width>100</width>
      <height>30</height>
     </rect>
@@ -255,7 +173,7 @@
    <property name="geometry">
     <rect>
      <x>1125</x>
-     <y>110</y>
+     <y>60</y>
      <width>200</width>
      <height>30</height>
     </rect>
@@ -274,7 +192,7 @@
    <property name="geometry">
     <rect>
      <x>1375</x>
-     <y>110</y>
+     <y>60</y>
      <width>100</width>
      <height>30</height>
     </rect>
@@ -305,71 +223,193 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>160</y>
+     <y>120</y>
      <width>1880</width>
-     <height>830</height>
+     <height>870</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="minimumSize">
     <size>
      <width>1880</width>
-     <height>830</height>
+     <height>870</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>1880</width>
-     <height>830</height>
+     <height>870</height>
     </size>
    </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAsNeeded</enum>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="textElideMode">
+    <enum>Qt::ElideLeft</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
    <column>
     <property name="text">
-     <string>Part ID</string>
+     <string>Entry ID</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Date</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
     </property>
    </column>
    <column>
     <property name="text">
      <string>Name</string>
     </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
    </column>
    <column>
     <property name="text">
      <string>Department</string>
     </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Category</string>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
     </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Manufacturer</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Model</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Storage</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Employee</string>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
     </property>
    </column>
    <column>
     <property name="text">
      <string>Status</string>
     </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
    </column>
    <column>
     <property name="text">
      <string>Quantity</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Employee</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Description</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
     </property>
    </column>
   </widget>
