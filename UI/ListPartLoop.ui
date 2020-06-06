@@ -34,7 +34,7 @@
   <widget class="QComboBox" name="comboBoxListPartDepartment">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>770</x>
      <y>60</y>
      <width>200</width>
      <height>30</height>
@@ -47,21 +47,11 @@
     </font>
    </property>
    <property name="editable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="currentText">
-    <string>Facility Operation</string>
+    <string/>
    </property>
-   <item>
-    <property name="text">
-     <string>Facility Operation</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Building Maintenance</string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="labelListPartName">
    <property name="geometry">
@@ -90,7 +80,7 @@
     <rect>
      <x>625</x>
      <y>60</y>
-     <width>100</width>
+     <width>131</width>
      <height>30</height>
     </rect>
    </property>
@@ -110,9 +100,9 @@
   <widget class="QLineEdit" name="lineListPartName">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>775</x>
      <y>10</y>
-     <width>576</width>
+     <width>551</width>
      <height>30</height>
     </rect>
    </property>
@@ -163,26 +153,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
-   <item>
-    <property name="text">
-     <string>Store Rack A.1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Store Rack A.2</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Store Rack B.1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Store Rack B.2</string>
-    </property>
-   </item>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="labelListPartCategory">
    <property name="geometry">
@@ -209,7 +182,7 @@
   <widget class="QComboBox" name="comboBoxListPartCategory">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>770</x>
      <y>110</y>
      <width>200</width>
      <height>30</height>
@@ -221,21 +194,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
-   <item>
-    <property name="text">
-     <string>Paint</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Cable</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Valve</string>
-    </property>
-   </item>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButtonListPartSearch">
    <property name="geometry">
@@ -273,7 +234,7 @@
     <rect>
      <x>1000</x>
      <y>110</y>
-     <width>100</width>
+     <width>121</width>
      <height>30</height>
     </rect>
    </property>
@@ -305,6 +266,14 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
    <item>
     <property name="text">
      <string>Normal</string>
@@ -313,11 +282,6 @@
    <item>
     <property name="text">
      <string>Low</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>High</string>
     </property>
    </item>
   </widget>
@@ -373,49 +337,123 @@
      <height>830</height>
     </size>
    </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="textElideMode">
+    <enum>Qt::ElideRight</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
    <column>
     <property name="text">
      <string>Part ID</string>
     </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Name</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Department</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>New Column</string>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
     </property>
    </column>
    <column>
     <property name="text">
      <string>Manufacturer</string>
     </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
    </column>
    <column>
     <property name="text">
      <string>Model</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
     </property>
    </column>
    <column>
     <property name="text">
      <string>Category</string>
     </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Description</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
    </column>
    <column>
     <property name="text">
      <string>Storage</string>
     </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Stock Limit</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
    </column>
    <column>
     <property name="text">
      <string>Stock Quantity</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Stock Level</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
     </property>
    </column>
   </widget>
