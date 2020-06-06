@@ -90,7 +90,7 @@ class AddEntryApp(QDialog, addentry_ui):
         except Exception as error:
             self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
             self.AddEntry_reset()
-            self.error_popup("Input Error", error)
+            self.error_popup("Input Error", "Failed to add entry")
         else:
             self.cur.execute('RELEASE SAVEPOINT SP1')
             self.db.commit()

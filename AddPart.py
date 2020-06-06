@@ -113,7 +113,7 @@ class AddPartApp(QDialog, addpart_ui):
         except Exception as error:
             self.cur.execute('ROLLBACK TO SAVEPOINT SP1')
             self.AddPart_reset()
-            self.error_popup("Input Error", error)
+            self.error_popup("Input Error", "Failed to add part.")
         self.db.close()
 
     # Method to show success popup window

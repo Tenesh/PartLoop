@@ -69,7 +69,7 @@ class CustomApp(QDialog, custom_ui):
             self.db.close()
         except Exception as error:
             self.lineCustomDepartment.clear()
-            self.error_popup("Input Error", error)
+            self.error_popup("Input Error", "Failed to add department")
 
     def AddStorage_custom(self):
         storage_name = self.lineCustomStorage.text()
@@ -91,7 +91,7 @@ class CustomApp(QDialog, custom_ui):
             self.db.close()
         except Exception as error:
             self.lineCustomStorage.clear()
-            self.error_popup("Input Error", error)
+            self.error_popup("Input Error", "Failed to add storage")
 
     def AddCategory_custom(self):
         category_name = self.lineCustomCategory.text()
@@ -113,7 +113,7 @@ class CustomApp(QDialog, custom_ui):
             self.db.close()
         except Exception as error:
             self.lineCustomCategory.clear()
-            self.error_popup("Input Error", error)
+            self.error_popup("Input Error", "Failed to add category")
 
     def AddEmployee_custom(self):
         employee_name = self.lineCustomEmployee.text()
@@ -135,7 +135,7 @@ class CustomApp(QDialog, custom_ui):
             self.db.close()
         except Exception as error:
             self.lineCustomEmployee.clear()
-            self.error_popup("Input Error", error)
+            self.error_popup("Input Error", "Failed to add employee")
 
     # Method to show success popup window
     def success_popup(self, title_popup, msg_popup):
