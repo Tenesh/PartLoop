@@ -82,6 +82,7 @@ class ListEntryApp(QDialog, listentry_ui):
                         row_position = self.tableWidgetListEntry.rowCount()
                         self.tableWidgetListEntry.insertRow(row_position)
                         self.tableWidgetListEntry.resizeColumnsToContents()
+                        self.tableWidgetListEntry.horizontalHeader().setSectionResizeMode(7, QHeaderView.Stretch)
         self.db.close()
 
     # Method to reset list of entry

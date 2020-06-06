@@ -1,6 +1,7 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+from PyQt5 import QtWidgets
 import sys
 import psycopg2
 from PyQt5.uic import loadUiType
@@ -31,7 +32,7 @@ class ListPartApp(QDialog, listpart_ui):
         self.comboBoxListPartDepartment.setCurrentText('')
         self.comboBoxListPartCategory.setCurrentText('')
         self.comboBoxListPartStorage.setCurrentText('')
-        self.comboBoxListPartStockLevel.setCurrentText('')
+        # self.comboBoxListPartStockLevel.setCurrentText('')
 
     # Method to show drop-down data
     def ShowDepartment_custom(self):
@@ -67,20 +68,27 @@ class ListPartApp(QDialog, listpart_ui):
         field_department = self.comboBoxListPartDepartment.currentText()
         field_category = self.comboBoxListPartCategory.currentText()
         field_storage = self.comboBoxListPartStorage.currentText()
-        field_stocklevel = self.comboBoxListPartStockLevel.currentText()
+        # field_stocklevel = self.comboBoxListPartStockLevel.currentText()
         search_name = '%{}%'.format(field_name)
         search_department = '%{}%'.format(field_department)
         search_category = '%{}%'.format(field_category)
         search_storage = '%{}%'.format(field_storage)
-        search_stocklevel = '%{}%'.format(field_stocklevel)
+        # search_stocklevel = '%{}%'.format(field_stocklevel)
 
         self.db = ConnectDatabase()
         self.cur = self.db.cursor()
         try:
-            self.cur.execute('''SELECT part.id, part.part_department, part.part_manufacturer, part.part_model, part.part_category, part.part_description, part.part_storage, part.part_stocklimit, 
+            self.cur.execute('''SELECT part.id, part.part_name, part.part_department, part.part_manufacturer, part.part_model, part.part_category, part.part_storage, part.part_stocklimit, 
             SUM ( ( CASE 
                     WHEN entry.entry_status = 'In' THEN 1 
-                    ELSE -1 END)*entry.entry_qty) AS stock_quantity 
+                    ELSE -1 END)*entry.entry_qty) AS stock_quantity,
+            CASE 
+                WHEN SUM( (CASE  WHEN entry.entry_status = 'In' THEN 1 ELSE -1 END)* entry.entry_qty) < part.part_stocklimit/2 THEN 'Critical'
+                WHEN SUM( (CASE  WHEN entry.entry_status = 'In' THEN 1 ELSE -1 END)* entry.entry_qty) < part.part_stocklimit THEN 'Low'
+                WHEN SUM( (CASE  WHEN entry.entry_status = 'In' THEN 1 ELSE -1 END)* entry.entry_qty) >= part.part_stocklimit THEN 'Normal'
+                WHEN SUM( (CASE  WHEN entry.entry_status = 'In' THEN 1 ELSE -1 END)* entry.entry_qty) > part.part_stocklimit*2 THEN 'High'
+                ELSE 'Normal' END AS stock_level,
+            part.part_description
             FROM part 
             INNER JOIN entry ON entry.part_id = part.id 
             GROUP BY part.id
@@ -95,7 +103,8 @@ class ListPartApp(QDialog, listpart_ui):
                 self.tableWidgetListPart.setRowCount(0)
                 self.error_popup("List Part", "No records found!")
             else:
-                print(fetch_data)
+                self.tableWidgetListPart.horizontalHeader().setSectionResizeMode(0, 20)
+                self.tableWidgetListPart.horizontalHeader().setSectionResizeMode(1, 20)
                 self.tableWidgetListPart.setRowCount(0)
                 self.tableWidgetListPart.insertRow(0)
                 for row, form in enumerate(fetch_data):
@@ -105,6 +114,7 @@ class ListPartApp(QDialog, listpart_ui):
                         row_position = self.tableWidgetListPart.rowCount()
                         self.tableWidgetListPart.insertRow(row_position)
                         self.tableWidgetListPart.resizeColumnsToContents()
+                        self.tableWidgetListPart.horizontalHeader().setSectionResizeMode(10, QHeaderView.Stretch)
         self.db.close()
 
     # Method to reset list of entry
