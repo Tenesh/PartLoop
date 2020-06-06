@@ -34,7 +34,7 @@
   <widget class="QComboBox" name="comboBoxListEntryDepartment">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>780</x>
      <y>60</y>
      <width>200</width>
      <height>30</height>
@@ -47,21 +47,11 @@
     </font>
    </property>
    <property name="editable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="currentText">
-    <string>Facility Operation</string>
+    <string/>
    </property>
-   <item>
-    <property name="text">
-     <string>Facility Operation</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Building Maintenance</string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="labelListEntryPartName">
    <property name="geometry">
@@ -90,7 +80,7 @@
     <rect>
      <x>625</x>
      <y>60</y>
-     <width>100</width>
+     <width>120</width>
      <height>30</height>
     </rect>
    </property>
@@ -110,9 +100,9 @@
   <widget class="QLineEdit" name="lineListEntryPartName">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>780</x>
      <y>10</y>
-     <width>576</width>
+     <width>545</width>
      <height>30</height>
     </rect>
    </property>
@@ -129,7 +119,7 @@
   <widget class="QLabel" name="labelListEntryStorage">
    <property name="geometry">
     <rect>
-     <x>1000</x>
+     <x>1020</x>
      <y>60</y>
      <width>100</width>
      <height>30</height>
@@ -163,33 +153,16 @@
      <pointsize>12</pointsize>
     </font>
    </property>
-   <item>
-    <property name="text">
-     <string>Store Rack A.1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Store Rack A.2</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Store Rack B.1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Store Rack B.2</string>
-    </property>
-   </item>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="labelListEntryCategory">
    <property name="geometry">
     <rect>
      <x>625</x>
      <y>110</y>
-     <width>100</width>
+     <width>120</width>
      <height>30</height>
     </rect>
    </property>
@@ -209,7 +182,7 @@
   <widget class="QComboBox" name="comboBoxListEntryCategory">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>780</x>
      <y>110</y>
      <width>200</width>
      <height>30</height>
@@ -221,21 +194,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
-   <item>
-    <property name="text">
-     <string>Paint</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Cable</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Valve</string>
-    </property>
-   </item>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButtonListEntrySearch">
    <property name="geometry">
@@ -271,7 +232,7 @@
   <widget class="QLabel" name="labelListEntryStatus">
    <property name="geometry">
     <rect>
-     <x>1000</x>
+     <x>1020</x>
      <y>110</y>
      <width>100</width>
      <height>30</height>
@@ -305,16 +266,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
-   <item>
-    <property name="text">
-     <string>In</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Out</string>
-    </property>
-   </item>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButtonListEntryReset">
    <property name="geometry">
@@ -385,7 +339,7 @@
    </column>
    <column>
     <property name="text">
-     <string>New Column</string>
+     <string>Category</string>
     </property>
    </column>
    <column>
@@ -400,17 +354,22 @@
    </column>
    <column>
     <property name="text">
-     <string>Category</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
      <string>Storage</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>Stock Quantity</string>
+     <string>Employee</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Status</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Quantity</string>
     </property>
    </column>
   </widget>
