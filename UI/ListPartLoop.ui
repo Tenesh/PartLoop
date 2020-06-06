@@ -31,6 +31,9 @@
   <property name="windowTitle">
    <string>Part Directory</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QHeaderView::section {background-color: rgb(202, 255, 235);}</string>
+  </property>
   <widget class="QComboBox" name="comboBoxListPartDepartment">
    <property name="geometry">
     <rect>
@@ -230,6 +233,9 @@
    </property>
   </widget>
   <widget class="QLabel" name="labelListPartStockLevel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>1000</x>
@@ -252,6 +258,9 @@
    </property>
   </widget>
   <widget class="QComboBox" name="comboBoxListPartStockLevel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>1125</x>
@@ -276,12 +285,22 @@
    </item>
    <item>
     <property name="text">
+     <string>High</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
      <string>Normal</string>
     </property>
    </item>
    <item>
     <property name="text">
      <string>Low</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Critical</string>
     </property>
    </item>
   </widget>
@@ -352,6 +371,12 @@
    <property name="sortingEnabled">
     <bool>true</bool>
    </property>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>47</number>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
    <attribute name="verticalHeaderVisible">
     <bool>false</bool>
    </attribute>
@@ -365,6 +390,28 @@
       <pointsize>10</pointsize>
       <weight>50</weight>
       <bold>false</bold>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Department</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
      </font>
     </property>
    </column>
@@ -393,17 +440,6 @@
    <column>
     <property name="text">
      <string>Category</string>
-    </property>
-    <property name="font">
-     <font>
-      <family>Open Sans Semibold</family>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Description</string>
     </property>
     <property name="font">
      <font>
@@ -448,6 +484,17 @@
    <column>
     <property name="text">
      <string>Stock Level</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Semibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Description</string>
     </property>
     <property name="font">
      <font>

@@ -252,6 +252,9 @@
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QHeaderView::section {background-color: rgb(202, 255, 235);}</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -279,8 +282,11 @@
    <attribute name="horizontalHeaderCascadingSectionResizes">
     <bool>false</bool>
    </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>47</number>
+   </attribute>
    <attribute name="horizontalHeaderStretchLastSection">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
    <attribute name="verticalHeaderVisible">
     <bool>false</bool>
