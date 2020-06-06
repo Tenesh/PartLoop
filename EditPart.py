@@ -124,7 +124,7 @@ class EditPartApp(QDialog, editpart_ui):
             self.spinBoxEditPartLimit.setValue(fetch_data[8])
             self.lineEditPartDescription.setPlainText(fetch_data[7])
         except Exception as error:
-            self.error_popup("Input Error", "Failed to undo Part details.")
+            self.error_popup("Input Error", "Failed to undo Part.")
         self.db.close()
 
     # Method to delete the part

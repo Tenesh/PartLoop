@@ -64,7 +64,7 @@ class EditEntryApp(QDialog, editentry_ui):
             self.dateEditEntryDate.setDate(fetch_data[5])
             self.comboBoxEditEntryEmployee.setCurrentText(fetch_data[6])
         except Exception as error:
-            self.error_popup("Input Error", str(error))
+            self.error_popup("Input Error", "Failed to connect database")
         self.db.close()
 
     # Method to edit the entry
@@ -112,7 +112,7 @@ class EditEntryApp(QDialog, editentry_ui):
             self.dateEditEntryDate.setDate(fetch_data[5])
             self.comboBoxEditEntryEmployee.setCurrentText(fetch_data[6])
         except Exception as error:
-            self.error_popup("Input Error", "Failed to undo Entry details.")
+            self.error_popup("Input Error", "Failed to undo Entry.")
         self.db.close()
 
     # Method to delete the part
