@@ -20,6 +20,7 @@ class ListEntryApp(QDialog, listentry_ui):
         self.ShowStorage_custom()
         self.ShowCategory_custom()
         self.ClearDropDown()
+        self.ListEntry_show()
 
     # Method for Button action
     def HandleButtonAction(self):
@@ -101,4 +102,7 @@ class ListEntryApp(QDialog, listentry_ui):
 
     # Method to reset list of entry
     def ListEntry_reset(self):
-        pass
+        self.ClearDropDown()
+        self.lineListEntryPartName.clear()
+        self.ListEntry_show()
+
