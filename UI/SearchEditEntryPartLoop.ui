@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>DialogActionSearchEdit</class>
  <widget class="QDialog" name="DialogActionSearchEdit">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -24,6 +27,12 @@
   </property>
   <property name="windowTitle">
    <string>Search Entry</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#DialogActionSearchEdit{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.4 rgba(60, 153, 170, 255), stop:1 rgba(17, 99, 132, 255));
+}
+</string>
   </property>
   <widget class="QLabel" name="labelSearchEditId">
    <property name="geometry">

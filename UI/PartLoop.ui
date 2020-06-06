@@ -39,8 +39,36 @@
     <family>MS Shell Dlg 2</family>
    </font>
   </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
    <string>PartLoop</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#MainWindow{
+	background: url(:/Images/mainui_bg.png);
+}
+
+QMenuBar{
+	background-color:rgba(255, 255, 255, 0.8);
+}
+
+QMenuBar::item:selected{
+	background-color: rgba(17, 99, 132, 255);
+	color:rgb(80, 208, 161);
+}
+
+QMenu{
+	background-color: rgba(17, 99, 132, 255);
+}
+
+QMenu::item:selected{
+	color:rgb(80, 208, 161);
+}</string>
   </property>
   <property name="iconSize">
    <size>
@@ -52,6 +80,9 @@
    <set>QMainWindow::AllowNestedDocks|QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QLabel" name="labelMainTitle">
     <property name="enabled">
      <bool>true</bool>
@@ -107,7 +138,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(240, 240, 240);</string>
+     <string notr="true">background: rgba(0, 0, 0,0);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
@@ -119,12 +150,11 @@
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9.75pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:24pt; color:#181818;&quot;&gt;Welcome to PartLoop!&lt;/span&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:24pt; font-weight:600; color:#181818;&quot;&gt;Welcome to PartLoop!&lt;/span&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt;&quot;&gt;PartLoop is an open-source inventory application primarily designed for general spare part or component management . PartLoop is entirely written in Python with several frameworks namely PyQt5 and PostgreSQL for relational database. With PartLoop, you can manage your inventory with precision and accuracy!  &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt;&quot;&gt;The core functionality of the system are managing parts and usage entries. It has never been this easy to store your part details! You can add or edit parts with various details such as manufacturer, brand, model, minimum stock and etc. You can easily track the actual quantity of parts in the system which will alert if lower limit reached! You can record the usage of each stock using entry function providing you the overall information of your inventory activities with very minute details. &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt;&quot;&gt;With various filtering keys,  PartLoop allows you to search for many fields in seconds - no matter how many parts you've got. You can also search for stock levels, order numbers, manufacturers, location and more. How often have you ordered parts you already had in stock, but couldn't find them? How often did you forget to re-order parts because your stock went low and you didn't notice?  &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Poppins'; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12pt; font-weight:600;&quot;&gt;With PartLoop, you are covered!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
@@ -135,10 +165,26 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>1900</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>File</string>
     </property>
@@ -146,14 +192,23 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuView">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>View</string>
     </property>
     <addaction name="actionListPart"/>
     <addaction name="actionListEntry"/>
-    <addaction name="actionStatistics"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Help</string>
     </property>
@@ -161,6 +216,11 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionHelpDocumentation"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Edit</string>
     </property>
@@ -168,6 +228,11 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionEditEntry_2"/>
    </widget>
    <widget class="QMenu" name="menuSetting_2">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>New</string>
     </property>
@@ -175,6 +240,11 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionNewEntry_3"/>
    </widget>
    <widget class="QMenu" name="menuSettings">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Settings</string>
     </property>

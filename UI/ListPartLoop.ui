@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>DialogListPart</class>
  <widget class="QDialog" name="DialogListPart">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -32,7 +35,9 @@
    <string>Part Directory</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QHeaderView::section {background-color: rgb(202, 255, 235);}</string>
+   <string notr="true">#DialogListPart{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.4 rgba(60, 153, 170, 255), stop:1 rgba(17, 99, 132, 255));
+}</string>
   </property>
   <widget class="QComboBox" name="comboBoxListPartDepartment">
    <property name="geometry">
@@ -103,9 +108,9 @@
   <widget class="QLineEdit" name="lineListPartName">
    <property name="geometry">
     <rect>
-     <x>775</x>
+     <x>770</x>
      <y>10</y>
-     <width>551</width>
+     <width>555</width>
      <height>30</height>
     </rect>
    </property>
@@ -116,7 +121,7 @@
     </font>
    </property>
    <property name="placeholderText">
-    <string>Name of part</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="labelListPartStorage">
@@ -355,6 +360,11 @@
      <width>1880</width>
      <height>830</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QHeaderView::section{
+	background-color:rgba(80, 208, 161, 0.5)
+};</string>
    </property>
    <property name="sizeAdjustPolicy">
     <enum>QAbstractScrollArea::AdjustToContents</enum>
