@@ -25,7 +25,7 @@ class EditEntryApp(QDialog, editentry_ui):
     def ShowEmployee_custom(self):
         self.db = ConnectDatabase()
         self.cur = self.db.cursor()
-        self.cur.execute('SELECT employee_name FROM employee')
+        self.cur.execute('SELECT employee_name FROM employee ORDER BY employee_name ASC')
         employee_list = self.cur.fetchall()
         for employee in employee_list:
             self.comboBoxEditEntryEmployee.addItem(employee[0])
@@ -34,7 +34,7 @@ class EditEntryApp(QDialog, editentry_ui):
     def ShowStatus_entry(self):
         self.db = ConnectDatabase()
         self.cur = self.db.cursor()
-        self.cur.execute('SELECT status_name FROM status')
+        self.cur.execute('SELECT status_name FROM status ORDER BY status_name ASC')
         status_list = self.cur.fetchall()
         for status in status_list:
             self.comboBoxEditEntryStatus.addItem(status[0])

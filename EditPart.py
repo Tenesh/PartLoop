@@ -26,7 +26,7 @@ class EditPartApp(QDialog, editpart_ui):
     def ShowDepartment_custom(self):
         self.db = ConnectDatabase()
         self.cur = self.db.cursor()
-        self.cur.execute('SELECT department_name FROM department')
+        self.cur.execute('SELECT department_name FROM department ORDER BY department_name ASC')
         department_list = self.cur.fetchall()
         for department in department_list:
             self.comboBoxEditPartDepartment.addItem(department[0])
@@ -35,7 +35,7 @@ class EditPartApp(QDialog, editpart_ui):
     def ShowCategory_custom(self):
         self.db = ConnectDatabase()
         self.cur = self.db.cursor()
-        self.cur.execute('SELECT category_name FROM category')
+        self.cur.execute('SELECT category_name FROM category ORDER BY category_name ASC')
         category_list = self.cur.fetchall()
         for category in category_list:
             self.comboBoxEditPartCategory.addItem(category[0])
@@ -44,7 +44,7 @@ class EditPartApp(QDialog, editpart_ui):
     def ShowStorage_custom(self):
         self.db = ConnectDatabase()
         self.cur = self.db.cursor()
-        self.cur.execute('SELECT storage_name FROM storage')
+        self.cur.execute('SELECT storage_name FROM storage ORDER BY storage_name ASC')
         storage_list = self.cur.fetchall()
         for storage in storage_list:
             self.comboBoxEditPartStorage.addItem(storage[0])
