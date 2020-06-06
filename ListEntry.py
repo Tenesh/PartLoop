@@ -17,8 +17,6 @@ class ListEntryApp(QDialog, listentry_ui):
         self.HandleButtonAction()
         self.ShowDepartment_custom()
         self.ShowStatus_entry()
-        self.ShowStorage_custom()
-        self.ShowCategory_custom()
         self.ClearDropDown()
         self.ListEntry_show()
 
@@ -30,8 +28,6 @@ class ListEntryApp(QDialog, listentry_ui):
     # Method to set empty value in drop-down field
     def ClearDropDown(self):
         self.comboBoxListEntryDepartment.setCurrentText('')
-        self.comboBoxListEntryCategory.setCurrentText('')
-        self.comboBoxListEntryStorage.setCurrentText('')
         self.comboBoxListEntryStatus.setCurrentText('')
 
     # Method to show drop-down data
@@ -42,24 +38,6 @@ class ListEntryApp(QDialog, listentry_ui):
         department_list = self.cur.fetchall()
         for department in department_list:
             self.comboBoxListEntryDepartment.addItem(department[0])
-        self.db.close()
-
-    def ShowCategory_custom(self):
-        self.db = ConnectDatabase()
-        self.cur = self.db.cursor()
-        self.cur.execute('SELECT category_name FROM category ORDER BY category_name ASC')
-        category_list = self.cur.fetchall()
-        for category in category_list:
-            self.comboBoxListEntryCategory.addItem(category[0])
-        self.db.close()
-
-    def ShowStorage_custom(self):
-        self.db = ConnectDatabase()
-        self.cur = self.db.cursor()
-        self.cur.execute('SELECT storage_name FROM storage ORDER BY storage_name ASC')
-        storage_list = self.cur.fetchall()
-        for storage in storage_list:
-            self.comboBoxListEntryStorage.addItem(storage[0])
         self.db.close()
 
     def ShowStatus_entry(self):
@@ -75,30 +53,36 @@ class ListEntryApp(QDialog, listentry_ui):
     def ListEntry_show(self):
         field_name = self.lineListEntryPartName.text()
         field_department = self.comboBoxListEntryDepartment.currentText()
-        field_category = self.comboBoxListEntryCategory.currentText()
-        field_storage = self.comboBoxListEntryStorage.currentText()
         field_status = self.comboBoxListEntryStatus.currentText()
         search_name = '%{}%'.format(field_name)
         search_department = '%{}%'.format(field_department)
-        search_category = '%{}%'.format(field_category)
-        search_storage = '%{}%'.format(field_storage)
         search_status = '%{}%'.format(field_status)
         self.db = ConnectDatabase()
         self.cur = self.db.cursor()
-
         try:
-            self.cur.execute('''SELECT entry.id, part.part_name, part.part_department, part.part_category, 
-            part.part_storage, entry.entry_status, entry.entry_qty, entry.entry_desc, entry.entry_date, 
-            entry.entry_employee FROM entry JOIN part ON entry.part_id = part.id WHERE part.part_name ILIKE %s AND 
-            part.part_department ILIKE %s AND part.part_category ILIKE %s AND part.part_storage ILIKE %s AND 
-            entry.entry_status ILIKE %s''', (search_name, search_department, search_category, search_storage,
-                                             search_status))
+            self.cur.execute('''SELECT entry.id, entry.entry_date, part.part_name, part.part_department, 
+            entry.entry_status, entry.entry_qty, entry.entry_employee, entry.entry_desc FROM entry JOIN part ON 
+            entry.part_id = part.id WHERE part.part_name ILIKE %s AND part.part_department ILIKE %s AND 
+            entry.entry_status ILIKE %s ORDER BY entry.id ASC''',
+                             (search_name, search_department, search_status))
             fetch_data = self.cur.fetchall()
         except Exception as error:
-            print(str(error))
+            self.error_popup("Duplicate Error", "Failed to connect database")
         else:
-            for data in fetch_data:
-                print(data)
+            if fetch_data is None:
+                self.tableWidgetListEntry.setRowCount(0)
+                self.error_popup("List Entry", "No records found!")
+            else:
+                self.tableWidgetListEntry.setRowCount(0)
+                self.tableWidgetListEntry.insertRow(0)
+                for row, form in enumerate(fetch_data):
+                    for column, item in enumerate(form):
+                        self.tableWidgetListEntry.setItem(row, column, QTableWidgetItem(str(item)))
+                        column += 1
+                        row_position = self.tableWidgetListEntry.rowCount()
+                        self.tableWidgetListEntry.insertRow(row_position)
+                        self.tableWidgetListEntry.resizeColumnsToContents()
+        self.db.close()
 
     # Method to reset list of entry
     def ListEntry_reset(self):
@@ -106,3 +90,12 @@ class ListEntryApp(QDialog, listentry_ui):
         self.lineListEntryPartName.clear()
         self.ListEntry_show()
 
+    # Method to show error popup window
+    def error_popup(self, title_popup, msg_popup):
+        popup = QMessageBox()
+        popup.setFixedSize(500, 500)
+        popup.setWindowTitle(title_popup)
+        popup.setIcon(QMessageBox.Warning)
+        popup.setStyleSheet("font:9pt Poppins;")
+        popup.setText(msg_popup)
+        popup.exec_()
