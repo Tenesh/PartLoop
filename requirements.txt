@@ -1,0 +1,8 @@
+certifi==2020.4.5.1
+click==7.1.2
+psycopg2==2.8.5
+PyQt5==5.13.0
+PyQt5-sip==12.7.2
+pyqt5-tools==5.13.0.1.5
+python-dotenv==0.13.0
+wincertstore==0.2
