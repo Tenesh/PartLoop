@@ -48,6 +48,10 @@
   <property name="windowTitle">
    <string>PartLoop</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/Images/partloopicon.png</normaloff>:/Images/partloopicon.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">#MainWindow{
 	background: url(:/Images/mainui_bg.png);
