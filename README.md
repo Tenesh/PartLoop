@@ -28,9 +28,7 @@ With PartLoop, you can manage your inventory with _precision_ and **accuracy**. 
 
 ## Cloning the repo
 
-    ```
     \$ git clone https://github.com/Tenesh/PartLoop.git
-    ```
 
 ## Setting up database
 
@@ -40,17 +38,14 @@ With PartLoop, you can manage your inventory with _precision_ and **accuracy**. 
 
 ## Install dependencies
 
-  ```
-  \$ pip install -r requirements.txt 
-  ```
+    \$ pip install -r requirements.txt 
+
 
 ## Launch PartLoop
 
 Simply run *index.py* and start managing your inventory!<br>
 
-    ```
     \$ python index.py
-    ```
 
 
 #### That's all. How often did you forget to re-order parts because your stock went low and you didn't notice? Now, you have no worry! **_PartLoop got you covered._**
