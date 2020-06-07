@@ -31,11 +31,9 @@ With PartLoop, you can manage your inventory with _precision_ and **accuracy**. 
     $ git clone https://github.com/Tenesh/PartLoop.git
 
 ## Setting up database
-    #Create empty database in your localhost.
-    $ CREATE DATABASE dbname
-    
+
     #Restore PartLoop database in your localhost created database.
-    $ pg*dump dbname < partloopdump.sql
+    $ pg_dump dbname < partloopdump.sql
 
 ## Install dependencies
 
