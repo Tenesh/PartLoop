@@ -43,6 +43,7 @@ class SearchEditPartApp(QDialog, searcheditpart_ui):
             else:
                 self.EditPart_window(part_id)
         self.db.close()
+        self.close()
 
     # Method to open Edit Part window
     def EditPart_window(self, part_id):
@@ -89,6 +90,7 @@ class SearchEditEntryApp(QDialog, searcheditentry_ui):
             else:
                 self.EditEntry_window(entry_id)
         self.db.close()
+        self.close()
 
     # Method to open Edit Entry window
     def EditEntry_window(self, entry_id):
