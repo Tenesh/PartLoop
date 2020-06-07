@@ -17,5 +17,6 @@
         <file>Images/undo.png</file>
         <file>Images/custom.png</file>
         <file>Images/mainui_bg.png</file>
+        <file>Images/partloopicon.png</file>
     </qresource>
 </RCC>
