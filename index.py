@@ -10,6 +10,7 @@ from AddPart import AddPartApp
 from ListEntry import ListEntryApp
 from ListPart import ListPartApp
 from CustomSettings import CustomApp
+from Connect import ConnectDatabase
 
 # Global Variable
 main_ui, _ = loadUiType('Ui/PartLoop.ui')
@@ -32,10 +33,8 @@ class MainApp(QMainWindow, main_ui):
         self.actionListPart.triggered.connect(self.ListPart_window)
         self.actionListEntry.triggered.connect(self.ListEntry_window)
         self.actionCustom.triggered.connect(self.Custom_window)
-        # self.actionQuit.triggered.connect(self.QuitApp)
-        # self.actionHelpAbout.triggered.connect(self.About)
-        # self.actionHelpDocumentation.triggered.connect(self.Docs)
-        # self.actionStatistics.triggered.connect(self.Statistic_window)
+        self.actionQuit.triggered.connect(self.close)
+        self.actionConnect.triggered.connect(self.Connect_status)
 
     # Main Method for passing QDialog Classes
     def AddPart_window(self):
@@ -65,6 +64,16 @@ class MainApp(QMainWindow, main_ui):
     def Custom_window(self):
         self.apw = CustomApp()
         self.apw.show()
+
+    def Connect_status(self):
+        try:
+            ConnectDatabase()
+        except Exception as error:
+            self.statusBar().showMessage('Failed connect to database.')
+        else:
+            self.statusBar().showMessage('Connected to database.')
+        ConnectDatabase().close()
+
 
 # Running application
 def main():
