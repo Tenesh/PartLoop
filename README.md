@@ -4,7 +4,7 @@ PartLoop is an [inventory management software](https://en.wikipedia.org/wiki/Inv
 
 PartLoop is entirely written in **PYTHON** with several frameworks namely [**_PyQt5_**](https://pypi.org/project/PyQt5/) and [**_psycopg2_**](https://pypi.org/project/psycopg2/).
 
-With PartLoop, you can manage your inventory with _precision_ and **accuracy**. The core functionality of the system are **managing parts** and **usage entries**.
+With PartLoop, you can manage your inventory with **precision** and **accuracy**. The core functionality of the system are **managing parts** and **usage entries**.
 
 1. You can add or edit parts with various details such as _manufacturer_, _brand_, _model_, _minimum stock_ and etc.
 2. You can easily track the _actual quantity_ of parts in the system which will alert if _lower limit_ reached!
